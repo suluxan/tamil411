@@ -2,7 +2,12 @@ import React from 'react'
 
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 
+import 'semantic-ui-css/semantic.min.css'
+
 import UserList from './components/UserList'
+import ProjectsPage from './components/projectsPage'
+// import RunCard from './components/runsPage/runCard'
+import RunsList from './components/runsPage'
 
 import clsx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
@@ -203,12 +208,12 @@ export default function App() {
               </ListItem>
             </Link>
 
-            <Link to="/users" className={classes.navLink}>
+            <Link to="/runs" className={classes.navLink}>
               <ListItem button>
                 <ListItemIcon>
                   <PeopleIcon />
                 </ListItemIcon>
-                <ListItemText primary="Users" />
+                <ListItemText primary="Runs" />
               </ListItem>
             </Link>
           </List>
@@ -221,6 +226,10 @@ export default function App() {
               <Route exact path="/" component={Dashboard} />
               <Route exact path="/businesses" component={UserList} />
               <Route exact path="/users" component={UserList} />
+              <Route exact path="/projects" component={ProjectsPage} />
+              <Route exact path="/runs" component={RunsList} />
+
+
             </Switch>
 
             <Box pt={4}>
